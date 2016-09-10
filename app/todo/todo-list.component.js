@@ -9,29 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var todo_list_component_1 = require('./todo/todo-list.component');
-var AppComponent = (function () {
-    function AppComponent() {
-        var _this = this;
-        this.addTodo = function (value) {
-            if (value.length === 0)
-                return;
-            else
-                _this.todos.push(value);
-        };
-        this.deleteTodo = function (todo) {
-        };
-        this.title = 'Todo';
-        this.todos = [];
+var metadata_1 = require("angular2/src/core/metadata");
+var todo_item_component_1 = require('./todo-item.component');
+var TodoListComponent = (function () {
+    function TodoListComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        metadata_1.Input(), 
+        __metadata('design:type', Array)
+    ], TodoListComponent.prototype, "todos", void 0);
+    TodoListComponent = __decorate([
         core_1.Component({
-            selector: "todo-app",
-            templateUrl: './app/app.component.html',
-            directives: [todo_list_component_1.TodoListComponent]
+            selector: 'todo-list',
+            templateUrl: './app/todo/todo-list.component.html',
+            inputs: ['todos'],
+            directives: [todo_item_component_1.TodoItem]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoListComponent);
+    return TodoListComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.TodoListComponent = TodoListComponent;
