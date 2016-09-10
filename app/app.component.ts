@@ -7,16 +7,16 @@ import {Component} from 'angular2/core'
 
 
 export class AppComponent {
-    title:string;
-    todos:string[];
+    title: string;
+    todos: string[];
 
     constructor() {
         this.title = 'Todo';
-        this.todos = ['dsl;akd;lask;d', 'das;lkjd;alsk', 'dlakl;dska']
+        this.todos = []
     }
 
-    addTodo = (todo)=> {
-        this.todos.push(todo.value)
+    addTodo = (value: string)=> {
+        this.todos.push(value)
     }
 
     deleteTodo = (todo)=> {

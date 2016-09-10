@@ -9,24 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        var _this = this;
-        this.addTodo = function (value) {
-            _this.todos.push(value);
-        };
-        this.deleteTodo = function (todo) {
-        };
-        this.title = 'Todo';
-        this.todos = [];
+var TodoListComponent = (function () {
+    function TodoListComponent() {
     }
-    AppComponent = __decorate([
+    TodoListComponent = __decorate([
         core_1.Component({
-            selector: "todo-app",
-            templateUrl: './app/app.component.html'
+            selector: 'todo-list',
+            templeteUrl: ''
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoListComponent);
+    return TodoListComponent;
 }());
-exports.AppComponent = AppComponent;
