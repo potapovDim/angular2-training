@@ -9,15 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var metadata_1 = require("angular2/src/core/metadata");
+var todo_item_component_1 = require('./todo-item.component');
 var TodoListComponent = (function () {
     function TodoListComponent() {
     }
+    __decorate([
+        metadata_1.Input(), 
+        __metadata('design:type', Array)
+    ], TodoListComponent.prototype, "todos", void 0);
     TodoListComponent = __decorate([
         core_1.Component({
             selector: 'todo-list',
-            templeteUrl: ''
+            templateUrl: './app/todo/todo-list.component.html',
+            inputs: ['todos'],
+            directives: [todo_item_component_1.TodoItem]
         }), 
         __metadata('design:paramtypes', [])
     ], TodoListComponent);
     return TodoListComponent;
 }());
+exports.TodoListComponent = TodoListComponent;
