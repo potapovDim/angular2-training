@@ -1,8 +1,5 @@
-import 'core-js'
-import 'reflect-metadata'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import {AppComponent} from './app.component'
-import { bootstrap } from 'angular2/platform/browser'
+import { AppModule } from './app.module';
 
-
-bootstrap(AppComponent)
+platformBrowserDynamic().bootstrapModule(AppModule);

@@ -1,9 +1,13 @@
-var webpack = require('webpack')
+const webpack = require('webpack')
 module.exports = {
   entry: './app/main.ts',
   output: {
     path: './',
     filename: 'bundle.js'
+  },
+  devServer: {
+    port: 5050,
+    historyApiFallback: true
   },
   module: {
     loaders: [
@@ -13,4 +17,4 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.ts']
   }
-};
+}
