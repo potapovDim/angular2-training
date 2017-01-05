@@ -2,8 +2,8 @@ const webpack = require('webpack')
 module.exports = {
   entry: './app/main.ts',
   output: {
-    path: './',
-    filename: 'bundle.js'
+    path: './app',
+    filename: 'main.js'
   },
   devServer: {
     port: 5050,
