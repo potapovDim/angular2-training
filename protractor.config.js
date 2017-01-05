@@ -1,14 +1,4 @@
-// FIRST TIME ONLY- run:
-//   ./node_modules/.bin/webdriver-manager update
-//
-//   Try: `npm run webdriver:update`
-//
-// AND THEN EVERYTIME ...
-//   1. Compile with `tsc`
-//   2. Make sure the test server (e.g., http-server: localhost:8080) is running.
-//   3. ./node_modules/.bin/protractor protractor.config.js
-//
-//   To do all steps, try:  `npm run e2e`
+
 
 var fs = require('fs');
 var path = require('canonical-path');
@@ -36,20 +26,13 @@ exports.config = {
   // Base URL for application server
   baseUrl: 'http://localhost:8080',
 
-  // doesn't seem to work.
-  // resultJsonOutputFile: "foo.json",
+
 
   onPrepare: function() {
-    //// SpecReporter
-    //var SpecReporter = require('jasmine-spec-reporter');
-    //jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'none'}));
-    //// jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
 
-    // debugging
-    // console.log('browser.params:' + JSON.stringify(browser.params));
     jasmine.getEnv().addReporter(new Reporter( browser.params )) ;
 
-    // Allow changing bootstrap mode to NG1 for upgrade tests
+
     global.setProtractorToNg1Mode = function() {
       browser.useAllAngular2AppRoots = false;
       browser.rootEl = 'body';
@@ -64,7 +47,7 @@ exports.config = {
   }
 };
 
-// Custom reporter
+
 function Reporter(options) {
   var _defaultOutputFile = path.resolve(process.cwd(), './_test-output', 'protractor-results.txt');
   options.outputFile = options.outputFile || _defaultOutputFile;
@@ -109,10 +92,6 @@ function Reporter(options) {
   };
 
   this.jasmineDone = function() {
-    outputFile = options.outputFile;
-    //// Alternate approach - just stringify the _root - not as pretty
-    //// but might be more useful for automation.
-    // var output = JSON.stringify(_root, null, 2);
     var output = formatOutput(_root);
     fs.appendFileSync(outputFile, output);
   };
