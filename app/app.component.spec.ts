@@ -17,7 +17,6 @@ describe('AppComponent', function () {
   }));
 
   beforeEach(() => {
-    console.log('0-0-12301312312312312412412')
     fixture = TestBed.createComponent(AppComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));

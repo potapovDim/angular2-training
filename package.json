@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "s",
   "scripts": {
-    "start": "tsc|webpack-dev-server",
+    "start": "tsc|webpack-dev-server --hot",
     "e2e": "protractor protractor.config.js",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "test": "karma start karma.conf.js",
