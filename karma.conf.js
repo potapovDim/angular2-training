@@ -1,6 +1,6 @@
 module.exports = function(config) {
 
-  const testWebpackConfig = require('./webpack.config');
+  const testWebpackConfig = require('./webpack.test');
 
   const appBase    = 'app/';      
   const appSrcBase = 'app/';      

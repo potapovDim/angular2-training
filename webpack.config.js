@@ -1,9 +1,19 @@
+const path = require('path')
 const webpack = require('webpack')
+
 module.exports = {
-  entry: './app/main.ts',
+  cache: true,
+  devtool: 'source-map',
+  entry: {
+   vendor: './app/vendor',
+   polyfills: './app/polyfills',
+   main: './app/main'
+  },
   output: {
-    path: './app',
-    filename: 'main.js'
+    path: path.join(__dirname,''),
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].map',
+    chunkFilename: '[id].chunk.js',
   },
   devServer: {
     port: 5050,
@@ -11,10 +21,15 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.ts$/, loader: 'ts-loader'}
+      {test: /\.ts$/, loader: 'awesome-typescript-loader'},
+      {test: /\.json$/, loader: 'json-loader'},
+      {test: /\.html$/, loader: 'raw-loader'}
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.ts']
-  }
+    extensions: ['', '.js', '.ts', '.json']
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({name:['polyfills']})
+  ]
 }
