@@ -5,9 +5,9 @@ module.exports = {
   cache: true,
   devtool: 'source-map',
   entry: {
-   vendor: './app/vendor',
-   polyfills: './app/polyfills',
-   main: './app/main'
+   vendor: './src/vendor',
+   polyfills: './src/polyfills',
+   main: './src/main'
   },
   output: {
     path: path.join(__dirname,''),
