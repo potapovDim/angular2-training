@@ -1,4 +1,4 @@
-Error.stackTraceLimit = 0;
+Error.stackTraceLimit = Infinity;
 
 require('core-js/es6');
 require('core-js/es7/reflect');
